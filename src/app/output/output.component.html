@@ -1,0 +1,14 @@
+<div *ngIf="inProgress===false">
+    <output type="text">- {{entry}}
+        <span class="edit" (click)="edit()">✏️</span>
+        <span class="erase" (click)="erase()">🗑️</span>
+        <span class="up" (click)="up()" *ngIf="position!==0">⬆️</span>
+        <span class="down" (click)="down()" *ngIf="position!==list.length-1">⬇️</span>
+    </output>
+</div>
+
+<div *ngIf="inProgress===true">
+    <input type="text" name="entry" [(ngModel)]="entry" placeholder="{{entry}}">
+    <span class="dismiss" (click)="dismiss()">❌</span>
+    <span class="save" (click)="save()">✔️</span>
+</div>

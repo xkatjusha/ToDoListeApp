@@ -1,0 +1,15 @@
+<div>
+    <table>
+        <tr>
+            <th>
+                <span *ngFor="let todo of todoService.todolist" (click)="selectList(todo)"> | {{todo.name}}
+                    ({{todo.list.length}}) |</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <app-todo_entry [todo1]="selectedList"></app-todo_entry>
+            </td>
+        </tr>
+    </table>
+</div>

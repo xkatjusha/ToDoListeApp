@@ -1,0 +1,37 @@
+div {
+    background-color: FloralWhite;
+    height: 1000px;
+    width: 500px;
+    font-family: Arial;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    align-items: center top;
+}
+
+th {
+    font-size: 50px;
+    text-decoration: underline solid;
+    text-align: center;
+}
+
+.collection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+tr {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px black;
+}
+
+body {
+    background-size: auto;
+    background-color: DarkGray;
+}
+
+table {
+    text-align: center;
+}
