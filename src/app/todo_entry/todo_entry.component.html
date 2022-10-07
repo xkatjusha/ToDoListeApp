@@ -1,10 +1,16 @@
-<h4>{{todo1.name}}</h4>
-<div>
-    <app-output [entry]="todoentry" [list]="todo1.list" *ngFor="let todoentry of todo1.list; index as i" [position]="i">
-    </app-output>
-    <input type="datetime-local" (keydown.enter)="add()" placeholder="tt.mm.jjjj --:--" name="deadlinerecords"
-        [(ngModel)]="deadlinerecords">
-    <input type="text" (keydown.enter)="add()" placeholder="To-Do" name="todorecords" [(ngModel)]="todorecords"
-        #newtodorecords>
-    <span class="add" (click)="add()">➕</span>
+<div *ngIf="inProgress===false">
+    <input type="checkbox" id="checkbox">
+    <output type="text"> {{entry}}
+        <span class="edit" (click)="edit()">✏️</span>
+        <span class="erase" (click)="erase()">🗑️</span>
+        <span class="up" (click)="up()" *ngIf="position!==0">⬆️</span>
+        <span class="down" (click)="down()" *ngIf="position!==list.length-1">⬇️</span>
+    </output>
+</div>
+
+
+<div *ngIf="inProgress===true">
+    <input type="text" name="entry" [(ngModel)]="entry" placeholder="{{entry}}" id="inputfield">
+    <span class="dismiss" (click)="dismiss()">❌</span>
+    <span class="save" (click)="save()">✔️</span>
 </div>

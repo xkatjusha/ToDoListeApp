@@ -1,0 +1,11 @@
+<h4>{{todo1.name}}</h4>
+<div>
+    <app-todo_entry [entry]="todoentry" [list]="todo1.list" *ngFor="let todoentry of todo1.list; index as i" [position]="i">
+    </app-todo_entry>
+    
+    <input type="datetime-local" (keydown.enter)="add()" placeholder="tt.mm.jjjj --:--" name="deadlinerecords"
+        [(ngModel)]="deadlinerecords">
+    <input type="text" (keydown.enter)="add()" placeholder="To-Do" name="todorecords" [(ngModel)]="todorecords"
+        #newtodorecords>
+    <span class="add" (click)="add()">➕</span>
+</div>
